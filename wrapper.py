@@ -9,10 +9,10 @@ Description: A wrapper function to derive the Sentinel-1 ARD
 
 from typing import Optional
 import ee
-import border_noise_correction as bnc
-import speckle_filter as sf
-import terrain_flattening as trf
-import helper
+import ee_s1_ard.border_noise_correction as bnc
+import ee_s1_ard.speckle_filter as sf
+import ee_s1_ard.terrain_flattening as trf
+import ee_s1_ard.helper as helper
 
 
 ###########################################

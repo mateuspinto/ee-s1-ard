@@ -30,12 +30,13 @@ def maskAngLT452(image):
         Masked image
 
     """
-    ang = image.select(['angle'])
-    return image.updateMask(ang.lt(45.23993)).set('system:time_start', image.get('system:time_start'))
+    ang = image.select(["angle"])
+    return image.updateMask(ang.lt(45.23993)).set(
+        "system:time_start", image.get("system:time_start")
+    )
 
 
-
-def maskAngGT30(image):
+def mask_ang_gt30(image):
     """
     mask out angles <= 30.63993
 
@@ -51,8 +52,10 @@ def maskAngGT30(image):
 
     """
 
-    ang = image.select(['angle'])
-    return image.updateMask(ang.gt(30.63993)).set('system:time_start', image.get('system:time_start'))
+    ang = image.select(["angle"])
+    return image.updateMask(ang.gt(30.63993)).set(
+        "system:time_start", image.get("system:time_start")
+    )
 
 
 def maskEdge(image):
@@ -71,9 +74,12 @@ def maskEdge(image):
 
     """
 
-    mask = image.select(0).unitScale(-25, 5).multiply(255).toByte()#.connectedComponents(ee.Kernel.rectangle(1,1), 100)
-    return image.updateMask(mask.select(0)).set('system:time_start', image.get('system:time_start')) 
-
+    mask = (
+        image.select(0).unitScale(-25, 5).multiply(255).toByte()
+    )  # .connectedComponents(ee.Kernel.rectangle(1,1), 100)
+    return image.updateMask(mask.select(0)).set(
+        "system:time_start", image.get("system:time_start")
+    )
 
 
 def f_mask_edges(image):
@@ -91,10 +97,10 @@ def f_mask_edges(image):
         Corrected image
 
     """
-    
+
     db_img = helper.lin_to_db(image)
-    output = maskAngGT30(db_img)
+    output = mask_ang_gt30(db_img)
     output = maskAngLT452(output)
-    #output = maskEdge(output)
+    # output = maskEdge(output)
     output = helper.db_to_lin(output)
-    return output.set('system:time_start', image.get('system:time_start'))
+    return output.set("system:time_start", image.get("system:time_start"))

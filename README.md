@@ -6,18 +6,21 @@ I DO NOT OWN THE SOLUTION MADE HERE. My Fork has the sole purpose of making the 
 
 ## Testing the solution in SITS (Satellite Image Time Series) for agriculture
 
-![SITS](repo/sits.png)
+![sits](https://github.com/user-attachments/assets/6fac0b67-0567-4829-b2fa-88d7f58a264e)
 
 ## Testing the solution in a single agriculture image
 
 ### Raw image (from GEE)
-![Raw image](repo/raw.png)
+![raw](https://github.com/user-attachments/assets/a436a71f-9d80-4d27-8f15-692f8dec7683)
+
 
 ### GRD image (preprocessed in GEE)
-![GRD image](repo/grd.png)
+![grd](https://github.com/user-attachments/assets/e2a7a372-b9d5-443b-a3bc-970e194436a4)
+
 
 ### ARD image (this solution)
-![ARD image](repo/ard.png)
+![ard](https://github.com/user-attachments/assets/cca067ee-baaa-45b2-b11b-4840e2077560)
+
 
 ## Introduction
 The Sentinel-1 satellites provide temporally dense and high spatial resolution synthetic aperture radar (SAR) imagery. The open data policy and global coverage of Sentinel-1 make it a valuable data source for a wide range of SAR-based applications. In this regard, Google Earth Engine (GEE) is a key platform for large area analysis with preprocessed Sentinel-1 backscatter images being available within few days after acquisition.  In this implementation, we present a framework for preparing Sentinel-1 SAR backscatter Analysis-Ready-Data (ARD) in GEE that implements additional border noise correction, speckle filtering and radiometric terrain normalization. The proposed framework can be used to generate Sentinel-1 ARD suitable for a wide range of land and inland water mapping/monitoring applications. The ARD preparation framework is implemented in [GEE JavaScript](https://code.earthengine.google.com/?accept_repo=users/adugnagirma/gee_s1_ard) and Python API's.

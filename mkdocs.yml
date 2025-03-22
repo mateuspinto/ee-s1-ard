@@ -1,0 +1,52 @@
+site_name: ee_s1_ard
+repo_url: https://github.com/mateuspinto/ee_s1_ard
+site_url: https://mateuspinto.github.io/ee_s1_ard
+site_description: Sentinel 1 Analysis Ready Data for GEE.
+site_author: Mateus Pinto da Silva
+edit_uri: edit/main/docs/
+repo_name: mateuspinto/ee_s1_ard
+copyright: Maintained by <a href="https://mateuspinto.com">mateuspinto</a>.
+
+nav:
+  - Home: index.md
+  - Modules: modules.md
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: ["ee_s1_ard"]
+theme:
+  name: material
+  feature:
+    tabs: true
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: white
+      accent: deep orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: deep orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/mateuspinto/ee_s1_ard
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/ee_s1_ard
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true

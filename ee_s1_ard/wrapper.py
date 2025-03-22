@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
 Version: v1.2
 Date: 2021-04-01
@@ -7,13 +6,12 @@ Authors: Mullissa A., Vollrath A., Braun, C., Slagter B., Balling J., Gou Y., Go
 Description: A wrapper function to derive the Sentinel-1 ARD
 """
 
-from typing import Optional
 import ee
+
 import ee_s1_ard.border_noise_correction as bnc
+import ee_s1_ard.helper as helper
 import ee_s1_ard.speckle_filter as sf
 import ee_s1_ard.terrain_flattening as trf
-import ee_s1_ard.helper as helper
-
 
 ###########################################
 # DO THE JOB
@@ -90,7 +88,7 @@ class S1ARDImageCollection:
         clip_to_roi: bool = False,
         save_asset: bool = False,
         asset_id: str = "",
-        dem: Optional[ee.Image] = "USGS/SRTMGL1_003",
+        dem: str = "USGS/SRTMGL1_003",
     ) -> None:
         if polarization not in ["VV", "VH", "VVVH"]:
             raise ValueError("Invalid polarization")
@@ -150,14 +148,10 @@ class S1ARDImageCollection:
             .filterBounds(self.geometry)
         )
         if self.polarization == "VV":
-            s1 = s1.filter(
-                ee.Filter.listContains("transmitterReceiverPolarisation", "VV")
-            )
+            s1 = s1.filter(ee.Filter.listContains("transmitterReceiverPolarisation", "VV"))
             s1 = s1.select(["VV", "angle"])
         elif self.polarization == "VH":
-            s1 = s1.filter(
-                ee.Filter.listContains("transmitterReceiverPolarisation", "VH")
-            )
+            s1 = s1.filter(ee.Filter.listContains("transmitterReceiverPolarisation", "VH"))
             s1 = s1.select(["VH", "angle"])
         else:
             s1 = s1.filter(
@@ -168,20 +162,14 @@ class S1ARDImageCollection:
             )
             s1 = s1.select(["VV", "VH", "angle"])
 
-        s1 = s1.filter(
-            ee.Filter.eq(
-                "orbitProperties_pass", "ASCENDING" if self.ascending else "DESCENDING"
-            )
-        )
+        s1 = s1.filter(ee.Filter.eq("orbitProperties_pass", "ASCENDING" if self.ascending else "DESCENDING"))
 
         if self.apply_border_noise_correction:
             s1 = s1.map(bnc.f_mask_edges)
         if self.apply_speckle_filtering:
             if self.speckle_filter_framework == "MONO":
                 s1 = ee.ImageCollection(
-                    sf.MonoTemporal_Filter(
-                        s1, self.speckle_filter_kernel_size, self.speckle_filter_type
-                    )
+                    sf.MonoTemporal_Filter(s1, self.speckle_filter_kernel_size, self.speckle_filter_type)
                 )
             else:
                 s1 = ee.ImageCollection(

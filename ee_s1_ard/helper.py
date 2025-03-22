@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
 Version: v1.2
 Date: 2021-02-11
@@ -29,11 +28,7 @@ def lin_to_db(image):
 
     """
     bandNames = image.bandNames().remove("angle")
-    db = (
-        ee.Image.constant(10)
-        .multiply(image.select(bandNames).log10())
-        .rename(bandNames)
-    )
+    db = ee.Image.constant(10).multiply(image.select(bandNames).log10()).rename(bandNames)
     return image.addBands(db, None, True)
 
 
@@ -53,11 +48,7 @@ def db_to_lin(image):
 
     """
     band_names = image.bandNames().remove("angle")
-    lin = (
-        ee.Image.constant(10)
-        .pow(image.select(band_names).divide(10))
-        .rename(band_names)
-    )
+    lin = ee.Image.constant(10).pow(image.select(band_names).divide(10)).rename(band_names)
     return image.addBands(lin, None, True)
 
 
@@ -76,11 +67,7 @@ def lin_to_db2(image):
         Converted image
 
     """
-    db = (
-        ee.Image.constant(10)
-        .multiply(image.select(["VV", "VH"]).log10())
-        .rename(["VV", "VH"])
-    )
+    db = ee.Image.constant(10).multiply(image.select(["VV", "VH"]).log10()).rename(["VV", "VH"])
     return image.addBands(db, None, True)
 
 
@@ -104,8 +91,6 @@ def add_ratio_lin(image):
         Image containing the ratio band
 
     """
-    ratio = image.addBands(
-        image.select("VV").divide(image.select("VH")).rename("VVVH_ratio")
-    )
+    ratio = image.addBands(image.select("VV").divide(image.select("VH")).rename("VVVH_ratio"))
 
     return ratio.set("system:time_start", image.get("system:time_start"))

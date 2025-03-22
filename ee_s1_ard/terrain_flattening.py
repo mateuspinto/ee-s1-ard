@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 
 """
 Version: v1.0
@@ -10,8 +9,9 @@ Angular-Based Radiometric Slope Correction for Sentinel-1 on Google Earth Engine
   Remote Sensing, 12(11), [1867]. https://doi.org/10.3390/rs12111867
 """
 
-import ee
 import math
+
+import ee
 
 # ---------------------------------------------------------------------------//
 # Terrain Flattening
@@ -87,9 +87,7 @@ def slope_correction(
         """
         # Surface model
         nominator = (ninety_rad.subtract(theta_irad)).cos()
-        denominator = alpha_azRad.cos().multiply(
-            (ninety_rad.subtract(theta_irad).add(alpha_rrad)).cos()
-        )
+        denominator = alpha_azRad.cos().multiply((ninety_rad.subtract(theta_irad).add(alpha_rrad)).cos())
         return nominator.divide(denominator)
 
     def _erode(image, distance):
@@ -112,13 +110,7 @@ def slope_correction(
         """
         # buffer function (thanks Noel)
 
-        d = (
-            image.Not()
-            .unmask(1)
-            .fastDistanceTransform(30)
-            .sqrt()
-            .multiply(ee.Image.pixelArea().sqrt())
-        )
+        d = image.Not().unmask(1).fastDistanceTransform(30).sqrt().multiply(ee.Image.pixelArea().sqrt())
 
         return image.updateMask(d.gt(distance))
 
@@ -145,9 +137,7 @@ def slope_correction(
         # layover, where slope > radar viewing angle
         layover = alpha_rrad.lt(theta_irad).rename("layover")
         # shadow
-        shadow = alpha_rrad.gt(
-            ee.Image.constant(-1).multiply(ninety_rad.subtract(theta_irad))
-        ).rename("shadow")
+        shadow = alpha_rrad.gt(ee.Image.constant(-1).multiply(ninety_rad.subtract(theta_irad))).rename("shadow")
         # combine layover and shadow
         mask = layover.And(shadow)
         # add buffer to final mask
@@ -179,9 +169,7 @@ def slope_correction(
         elevation = dem.resample("bilinear").reproject(proj, None, 10).clip(geom)
 
         # calculate the look direction
-        heading = ee.Terrain.aspect(image.select("angle")).reduceRegion(
-            ee.Reducer.mean(), image.geometry(), 1000
-        )
+        heading = ee.Terrain.aspect(image.select("angle")).reduceRegion(ee.Reducer.mean(), image.geometry(), 1000)
 
         # in case of null values for heading replace with 0
         heading = ee.Dictionary(heading).combine({"aspect": 0}, False).get("aspect")
@@ -205,11 +193,7 @@ def slope_correction(
         aspect_minus = aspect.updateMask(aspect.gt(180)).subtract(360)
 
         phi_srad = (
-            aspect.updateMask(aspect.lte(180))
-            .unmask()
-            .add(aspect_minus.unmask())
-            .multiply(-1)
-            .multiply(math.pi / 180)
+            aspect.updateMask(aspect.lte(180)).unmask().add(aspect_minus.unmask()).multiply(-1).multiply(math.pi / 180)
         )
 
         # elevation = dem.reproject(proj,None, 10).clip(geom)
@@ -239,9 +223,7 @@ def slope_correction(
         gamma0_flat = gamma0.multiply(scf)
 
         # get Layover/Shadow mask
-        mask = _masking(
-            alpha_rrad, theta_irad, terrain_flattening_additional_layover_shadow_buffer
-        )
+        mask = _masking(alpha_rrad, theta_irad, terrain_flattening_additional_layover_shadow_buffer)
         output = gamma0_flat.mask(mask).rename(band_names).copyProperties(image)
         output = ee.Image(output).addBands(image.select("angle"), None, True)
 

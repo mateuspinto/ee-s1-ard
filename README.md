@@ -2,7 +2,7 @@
 
 ## Why forking?
 
-I DO NOT OWN THE SOLUTION MADE HERE. My Fork has the sole purpose of making the solution easier to use as a git submodule, making the code more pythonic.
+I DO NOT OWN THE SOLUTION MADE HERE. All credits go to the author and original paper, duly referenced here. My purpose was simply to make the code more pythonic, with checks (mypy), and create a package on Pypi, in order to be easily usable in several academic and production solutions.
 
 ## Testing the solution in SITS (Satellite Image Time Series) for agriculture
 

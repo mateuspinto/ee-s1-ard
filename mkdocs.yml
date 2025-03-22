@@ -1,10 +1,10 @@
 site_name: ee_s1_ard
-repo_url: https://github.com/mateuspinto/ee_s1_ard
+repo_url: https://github.com/mateuspinto/ee-s1-ard
 site_url: https://mateuspinto.github.io/ee_s1_ard
 site_description: Sentinel 1 Analysis Ready Data for GEE.
 site_author: Mateus Pinto da Silva
 edit_uri: edit/main/docs/
-repo_name: mateuspinto/ee_s1_ard
+repo_name: mateuspinto/ee-s1-ard
 copyright: Maintained by <a href="https://mateuspinto.com">mateuspinto</a>.
 
 nav:
@@ -41,7 +41,7 @@ theme:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/mateuspinto/ee_s1_ard
+      link: https://github.com/mateuspinto/ee-s1-ard
     - icon: fontawesome/brands/python
       link: https://pypi.org/project/ee_s1_ard
 

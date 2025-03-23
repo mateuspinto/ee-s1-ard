@@ -1,6 +1,6 @@
 [project]
 name = "ee_s1_ard"
-version = "1.0.3"
+version = "1.0.4"
 description = "Sentinel 1 Analysis Ready Data for GEE."
 authors = [{ name = "Mateus Pinto da Silva", email = "mateuspinto@gmail.com" }]
 readme = "README.md"
@@ -17,9 +17,9 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://mateuspinto.github.io/ee_s1_ard/"
+Homepage = "https://mateuspinto.github.io/ee-s1-ard/"
 Repository = "https://github.com/mateuspinto/ee-s1-ard"
-Documentation = "https://mateuspinto.github.io/ee_s1_ard/"
+Documentation = "https://mateuspinto.github.io/ee-s1-ard/"
 
 [dependency-groups]
 dev = [

@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Version: v1.2
 Date: 2021-04-01
@@ -91,9 +90,9 @@ class S1ARDImageCollection:
         dem: str = "USGS/SRTMGL1_003",
     ) -> None:
         if polarization not in ["VV", "VH", "VVVH"]:
-            raise ValueError("Invalid polarization")
+            raise ValueError("Invalid polarization")  # noqa: TRY003
         if speckle_filter_framework not in ["MONO", "MULTI"]:
-            raise ValueError("Invalid speckle filter framework")
+            raise ValueError("Invalid speckle filter framework")  # noqa: TRY003
         if speckle_filter_type not in [
             "BOXCAR",
             "LEE",
@@ -101,15 +100,15 @@ class S1ARDImageCollection:
             "REFINED LEE",
             "LEE SIGMA",
         ]:
-            raise ValueError("Invalid speckle filter type")
+            raise ValueError("Invalid speckle filter type")  # noqa: TRY003
         if terrain_flattening_model not in ["DIRECT", "VOLUME"]:
-            raise ValueError("Invalid terrain flattening model")
+            raise ValueError("Invalid terrain flattening model")  # noqa: TRY003
         if output_format not in ["LINEAR", "DB"]:
-            raise ValueError("Invalid output format")
+            raise ValueError("Invalid output format")  # noqa: TRY003
         if terrain_flattening_additional_buffer < 0:
-            raise ValueError("Buffer must be >= 0")
+            raise ValueError("Buffer must be >= 0")  # noqa: TRY003
         if speckle_filter_kernel_size <= 0:
-            raise ValueError("Kernel size must be > 0")
+            raise ValueError("Kernel size must be > 0")  # noqa: TRY003
 
         self.start_date = start_date
         self.stop_date = stop_date

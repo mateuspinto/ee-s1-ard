@@ -1,6 +1,6 @@
 [project]
 name = "ee_s1_ard"
-version = "1.0.2"
+version = "1.0.3"
 description = "Sentinel 1 Analysis Ready Data for GEE."
 authors = [{ name = "Mateus Pinto da Silva", email = "mateuspinto@gmail.com" }]
 readme = "README.md"

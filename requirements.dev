@@ -16,7 +16,7 @@ eerepr==0.1.1
 executing==2.2.0
 folium==0.19.5
 fonttools==4.56.0
-future==1.0.1
+future==
 geemap==0.35.2
 geocoder==1.38.1
 google-api-core==2.24.1

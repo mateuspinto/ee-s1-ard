@@ -16,6 +16,8 @@ plugins:
       handlers:
         python:
           paths: ["ee_s1_ard"]
+          options:
+            docstring_style: numpy
 theme:
   name: material
   feature:

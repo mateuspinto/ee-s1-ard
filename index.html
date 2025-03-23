@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ee-s1-ard" class="md-skip">
+        <a href="#sentinel-1-sar-backscatter-analysis-ready-data-preparation-in-google-earth-engine" class="md-skip">
           Skip to content
         </a>
       
@@ -266,6 +266,18 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="." class="md-nav__link md-nav__link--active">
         
   
@@ -276,6 +288,154 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-import-the-library-and-create-an-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Import the library and create an instance:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-get-the-processed-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Get the processed collection:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-example-display-the-collection-in-gee" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Example: Display the collection in GEE:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-forking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why forking?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-the-solution-in-sits-satellite-image-time-series-for-agriculture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing the solution in SITS (Satellite Image Time Series) for agriculture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-the-solution-in-a-single-agriculture-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing the solution in a single agriculture image
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing the solution in a single agriculture image">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#raw-image-from-gee" class="md-nav__link">
+    <span class="md-ellipsis">
+      Raw image (from GEE)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grd-image-preprocessed-in-gee" class="md-nav__link">
+    <span class="md-ellipsis">
+      GRD image (preprocessed in GEE)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ard-image-this-solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      ARD image (this solution)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -322,6 +482,143 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-import-the-library-and-create-an-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Import the library and create an instance:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-get-the-processed-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Get the processed collection:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-example-display-the-collection-in-gee" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Example: Display the collection in GEE:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-forking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why forking?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-the-solution-in-sits-satellite-image-time-series-for-agriculture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing the solution in SITS (Satellite Image Time Series) for agriculture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-the-solution-in-a-single-agriculture-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing the solution in a single agriculture image
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing the solution in a single agriculture image">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#raw-image-from-gee" class="md-nav__link">
+    <span class="md-ellipsis">
+      Raw image (from GEE)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grd-image-preprocessed-in-gee" class="md-nav__link">
+    <span class="md-ellipsis">
+      GRD image (preprocessed in GEE)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ard-image-this-solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      ARD image (this solution)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -339,13 +636,140 @@
   
 
 
-<h1 id="ee-s1-ard">ee-s1-ard<a class="headerlink" href="#ee-s1-ard" title="Permanent link">&para;</a></h1>
-<!-- [![Release](https://img.shields.io/github/v/release/fpgmaas/cookiecutter-uv-example)](https://img.shields.io/github/v/release/fpgmaas/cookiecutter-uv-example)
-[![Build status](https://img.shields.io/github/actions/workflow/status/fpgmaas/cookiecutter-uv-example/main.yml?branch=main)](https://github.com/fpgmaas/cookiecutter-uv-example/actions/workflows/main.yml?query=branch%3Amain)
-[![Commit activity](https://img.shields.io/github/commit-activity/m/fpgmaas/cookiecutter-uv-example)](https://img.shields.io/github/commit-activity/m/fpgmaas/cookiecutter-uv-example)
-[![License](https://img.shields.io/github/license/fpgmaas/cookiecutter-uv-example)](https://img.shields.io/github/license/fpgmaas/cookiecutter-uv-example)
+<h1 id="sentinel-1-sar-backscatter-analysis-ready-data-preparation-in-google-earth-engine">Sentinel-1 SAR Backscatter Analysis Ready Data Preparation in Google Earth Engine<a class="headerlink" href="#sentinel-1-sar-backscatter-analysis-ready-data-preparation-in-google-earth-engine" title="Permanent link">&para;</a></h1>
+<p><a href="https://img.shields.io/github/v/release/mateuspinto/ee-s1-ard"><img alt="Release" src="https://img.shields.io/github/v/release/mateuspinto/ee-s1-ard" /></a>
+<a href="https://github.com/mateuspinto/ee-s1-ard/actions/workflows/main.yml?query=branch%3Amain"><img alt="Build status" src="https://img.shields.io/github/actions/workflow/status/mateuspinto/ee-s1-ard/main.yml?branch=main" /></a>
+<a href="https://img.shields.io/github/commit-activity/m/mateuspinto/ee-s1-ard"><img alt="Commit activity" src="https://img.shields.io/github/commit-activity/m/mateuspinto/ee-s1-ard" /></a>
+<a href="https://img.shields.io/github/license/mateuspinto/ee-s1-ard"><img alt="License" src="https://img.shields.io/github/license/mateuspinto/ee-s1-ard" /></a></p>
+<p>This implementation enhances the Sentinel-1 SAR Backscatter ARD Preparation framework by making it a PyPI package.</p>
+<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>geometry</code></td>
+<td><code>ee.Geometry</code></td>
+<td>Area of interest</td>
+<td>Required</td>
+</tr>
+<tr>
+<td><code>start_date</code></td>
+<td><code>str</code></td>
+<td>Start date (YYYY-MM-DD)</td>
+<td>Required</td>
+</tr>
+<tr>
+<td><code>stop_date</code></td>
+<td><code>str</code></td>
+<td>End date (YYYY-MM-DD)</td>
+<td>Required</td>
+</tr>
+<tr>
+<td><code>polarization</code></td>
+<td><code>str</code></td>
+<td>Polarization (<code>VV</code>, <code>VH</code>, <code>VVVH</code>)</td>
+<td><code>VVVH</code></td>
+</tr>
+<tr>
+<td><code>apply_border_noise_correction</code></td>
+<td><code>bool</code></td>
+<td>Apply border noise correction</td>
+<td><code>True</code></td>
+</tr>
+<tr>
+<td><code>apply_terrain_flattening</code></td>
+<td><code>bool</code></td>
+<td>Apply terrain flattening</td>
+<td><code>True</code></td>
+</tr>
+<tr>
+<td><code>apply_speckle_filtering</code></td>
+<td><code>bool</code></td>
+<td>Apply speckle filtering</td>
+<td><code>True</code></td>
+</tr>
+<tr>
+<td><code>output_format</code></td>
+<td><code>str</code></td>
+<td>Output format (<code>LINEAR</code>, <code>DB</code>)</td>
+<td><code>DB</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<p>Make sure you have the <code>earthengine-api</code> installed:</p>
+<pre><code class="language-bash">pip install ee-s1-ard
+</code></pre>
+<p>Authenticate with Google Earth Engine:</p>
+<pre><code class="language-bash">earthengine authenticate
+</code></pre>
+<hr />
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<h3 id="1-import-the-library-and-create-an-instance">1. Import the library and create an instance:<a class="headerlink" href="#1-import-the-library-and-create-an-instance" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">import ee
 
-This is a template repository for Python projects that use uv for their dependency management. -->
+# Initialize the GEE API
+ee.Initialize()
+
+from ee-s1-ard import S1ARDImageCollection
+
+# Define input parameters
+geometry = ee.Geometry.Polygon(
+    [[[5.0, 50.0], [5.5, 50.0], [5.5, 50.5], [5.0, 50.5], [5.0, 50.0]]]
+)
+start_date = '2021-01-01'
+stop_date = '2021-12-31'
+
+processor = S1ARDImageCollection(
+    geometry=geometry,
+    start_date=start_date,
+    stop_date=stop_date,
+    polarization=&quot;VVVH&quot;,
+    apply_border_noise_correction=True,
+    apply_terrain_flattening=True,
+    apply_speckle_filtering=True,
+    output_format=&quot;DB&quot;
+)
+</code></pre>
+<h3 id="2-get-the-processed-collection">2. Get the processed collection:<a class="headerlink" href="#2-get-the-processed-collection" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">collection = processor.get_collection()
+</code></pre>
+<h3 id="3-example-display-the-collection-in-gee">3. Example: Display the collection in GEE:<a class="headerlink" href="#3-example-display-the-collection-in-gee" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">import geemap
+
+Map = geemap.Map()
+Map.centerObject(geometry, 10)
+Map.addLayer(collection.mean(), {'min': -25, 'max': 0}, 'Sentinel-1')
+Map
+</code></pre>
+<hr />
+<h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
+<ul>
+<li>The processed collection is ready for analysis and visualization.</li>
+<li>Speckle filtering and terrain flattening are optional but improve data quality.</li>
+<li>Output in dB scale is suitable for most applications.
+```</li>
+</ul>
+<hr />
+<h2 id="why-forking">Why forking?<a class="headerlink" href="#why-forking" title="Permanent link">&para;</a></h2>
+<p>I DO NOT OWN THE SOLUTION MADE HERE. All credits go to the author and original paper, duly referenced here. My purpose was simply to make the code more pythonic, with checks (mypy), and create a package on Pypi, in order to be easily usable in several academic and production solutions.</p>
+<h2 id="testing-the-solution-in-sits-satellite-image-time-series-for-agriculture">Testing the solution in SITS (Satellite Image Time Series) for agriculture<a class="headerlink" href="#testing-the-solution-in-sits-satellite-image-time-series-for-agriculture" title="Permanent link">&para;</a></h2>
+<p><img alt="sits" src="https://github.com/user-attachments/assets/6fac0b67-0567-4829-b2fa-88d7f58a264e" /></p>
+<h2 id="testing-the-solution-in-a-single-agriculture-image">Testing the solution in a single agriculture image<a class="headerlink" href="#testing-the-solution-in-a-single-agriculture-image" title="Permanent link">&para;</a></h2>
+<h3 id="raw-image-from-gee">Raw image (from GEE)<a class="headerlink" href="#raw-image-from-gee" title="Permanent link">&para;</a></h3>
+<p><img alt="raw" src="https://github.com/user-attachments/assets/a436a71f-9d80-4d27-8f15-692f8dec7683" /></p>
+<h3 id="grd-image-preprocessed-in-gee">GRD image (preprocessed in GEE)<a class="headerlink" href="#grd-image-preprocessed-in-gee" title="Permanent link">&para;</a></h3>
+<p><img alt="grd" src="https://github.com/user-attachments/assets/e2a7a372-b9d5-443b-a3bc-970e194436a4" /></p>
+<h3 id="ard-image-this-solution">ARD image (this solution)<a class="headerlink" href="#ard-image-this-solution" title="Permanent link">&para;</a></h3>
+<p><img alt="ard" src="https://github.com/user-attachments/assets/cca067ee-baaa-45b2-b11b-4840e2077560" /></p>
 
 
 

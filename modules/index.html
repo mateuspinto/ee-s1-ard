@@ -709,7 +709,8 @@ in Google Earth Engine. Remote Sens. 13(10), 1954.</p>
 
               <details class="quote">
                 <summary>Source code in <code>ee_s1_ard/wrapper.py</code></summary>
-                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 21</span>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 20</span>
+<span class="normal"> 21</span>
 <span class="normal"> 22</span>
 <span class="normal"> 23</span>
 <span class="normal"> 24</span>
@@ -880,8 +881,7 @@ in Google Earth Engine. Remote Sens. 13(10), 1954.</p>
 <span class="normal">189</span>
 <span class="normal">190</span>
 <span class="normal">191</span>
-<span class="normal">192</span>
-<span class="normal">193</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">S1ARDImageCollection</span><span class="p">:</span>
+<span class="normal">192</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">S1ARDImageCollection</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Creates an Analysis-Ready Sentinel-1 ImageCollection following the framework</span>
 <span class="sd">    described in Mullissa et al. (2021) Remote Sens. 2021, 13, 1954.</span>
@@ -954,9 +954,9 @@ in Google Earth Engine. Remote Sens. 13(10), 1954.</p>
         <span class="n">dem</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;USGS/SRTMGL1_003&quot;</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">polarization</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;VV&quot;</span><span class="p">,</span> <span class="s2">&quot;VH&quot;</span><span class="p">,</span> <span class="s2">&quot;VVVH&quot;</span><span class="p">]:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid polarization&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid polarization&quot;</span><span class="p">)</span>  <span class="c1"># noqa: TRY003</span>
         <span class="k">if</span> <span class="n">speckle_filter_framework</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;MONO&quot;</span><span class="p">,</span> <span class="s2">&quot;MULTI&quot;</span><span class="p">]:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid speckle filter framework&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid speckle filter framework&quot;</span><span class="p">)</span>  <span class="c1"># noqa: TRY003</span>
         <span class="k">if</span> <span class="n">speckle_filter_type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span>
             <span class="s2">&quot;BOXCAR&quot;</span><span class="p">,</span>
             <span class="s2">&quot;LEE&quot;</span><span class="p">,</span>
@@ -964,15 +964,15 @@ in Google Earth Engine. Remote Sens. 13(10), 1954.</p>
             <span class="s2">&quot;REFINED LEE&quot;</span><span class="p">,</span>
             <span class="s2">&quot;LEE SIGMA&quot;</span><span class="p">,</span>
         <span class="p">]:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid speckle filter type&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid speckle filter type&quot;</span><span class="p">)</span>  <span class="c1"># noqa: TRY003</span>
         <span class="k">if</span> <span class="n">terrain_flattening_model</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;DIRECT&quot;</span><span class="p">,</span> <span class="s2">&quot;VOLUME&quot;</span><span class="p">]:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid terrain flattening model&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid terrain flattening model&quot;</span><span class="p">)</span>  <span class="c1"># noqa: TRY003</span>
         <span class="k">if</span> <span class="n">output_format</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;LINEAR&quot;</span><span class="p">,</span> <span class="s2">&quot;DB&quot;</span><span class="p">]:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid output format&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid output format&quot;</span><span class="p">)</span>  <span class="c1"># noqa: TRY003</span>
         <span class="k">if</span> <span class="n">terrain_flattening_additional_buffer</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Buffer must be &gt;= 0&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Buffer must be &gt;= 0&quot;</span><span class="p">)</span>  <span class="c1"># noqa: TRY003</span>
         <span class="k">if</span> <span class="n">speckle_filter_kernel_size</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Kernel size must be &gt; 0&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Kernel size must be &gt; 0&quot;</span><span class="p">)</span>  <span class="c1"># noqa: TRY003</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">start_date</span> <span class="o">=</span> <span class="n">start_date</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">stop_date</span> <span class="o">=</span> <span class="n">stop_date</span>
@@ -1107,7 +1107,8 @@ in Google Earth Engine. Remote Sens. 13(10), 1954.</p>
 
             <details class="quote">
               <summary>Source code in <code>ee_s1_ard/wrapper.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">134</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">133</span>
+<span class="normal">134</span>
 <span class="normal">135</span>
 <span class="normal">136</span>
 <span class="normal">137</span>
@@ -1165,8 +1166,7 @@ in Google Earth Engine. Remote Sens. 13(10), 1954.</p>
 <span class="normal">189</span>
 <span class="normal">190</span>
 <span class="normal">191</span>
-<span class="normal">192</span>
-<span class="normal">193</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_collection</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ee</span><span class="o">.</span><span class="n">ImageCollection</span><span class="p">:</span>
+<span class="normal">192</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_collection</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ee</span><span class="o">.</span><span class="n">ImageCollection</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Prepares the Sentinel-1 SAR ImageCollection as Analysis-Ready Data (ARD).</span>
 

@@ -1,11 +1,11 @@
 [project]
 name = "ee_s1_ard"
-version = "1.0.4"
+version = "1.0.5"
 description = "Sentinel 1 Analysis Ready Data for GEE."
 authors = [{ name = "Mateus Pinto da Silva", email = "mateuspinto@gmail.com" }]
 readme = "README.md"
 keywords = ['python']
-requires-python = ">=3.11,<4.0"
+requires-python = ">=3.10,<4.0"
 dependencies = ["earthengine-api>=1.5.7"]
 classifiers = [
     "Intended Audience :: Developers",
